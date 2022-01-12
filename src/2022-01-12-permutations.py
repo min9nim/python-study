@@ -16,5 +16,24 @@ class Solution:
     return result
 
 
-s = Solution()
-print(s.permute([1,2,3]))
+class Solution2:
+    def permute(self, nums):
+        res=[]
+        n=len(nums)
+        
+        def go(l,r):
+            if l==r:
+                res.append(nums.copy())
+                return 
+            for i in range(l,r+1):
+                nums[l],nums[i]=nums[i],nums[l]
+                go(l+1,r)
+                nums[l],nums[i]=nums[i],nums[l]
+            
+        go(0,n-1)
+        return res 
+
+
+
+s = Solution2()
+print(s.permute([1,2]))
