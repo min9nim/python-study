@@ -12,13 +12,10 @@ class Solution:
                 if p - tmp > sell - buy:
                     buy = tmp
                     sell = p
-                    continue
-                if p > sell:
+                elif p > sell:
                     sell = p
-                    continue
-                if tmp > p:
+                elif tmp > p:
                     tmp = p
-                    continue
 
         return sell - buy
 
