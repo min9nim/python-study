@@ -21,4 +21,21 @@ assert Solution().checkPerfectNumber(28) == True
 assert Solution().checkPerfectNumber(7) == False
 
 
+class Solution:
+    def checkPerfectNumber(self, num: int) -> bool:
+        if num == 1:
+            return False
+
+        sum = 1
+        for n in range(2, math.floor(math.sqrt(num))+1):
+            if num % n == 0:
+                sum += n + num // n
+
+        return sum == num
+
+
+assert Solution().checkPerfectNumber(28) == True
+assert Solution().checkPerfectNumber(7) == False
+
+
 print('done')
