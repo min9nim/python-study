@@ -19,5 +19,6 @@ assert Solution().isUgly(1) == True
 assert Solution().isUgly(14) == False
 assert Solution().isUgly(0) == False
 
+# 시간복잡도는 log(N)
 
 print('done')
