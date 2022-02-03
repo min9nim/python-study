@@ -10,8 +10,8 @@ class Solution:
             result += numIncluded
         return result
 
-# 시간복잡도: O(N*2^N)
-# 공간복잡도: O(N*2^N)
+# 시간복잡도: O(2^N)
+# 공간복잡도: O(2^N)
 
 
 print(Solution().subsets([1, 2, 3]))
