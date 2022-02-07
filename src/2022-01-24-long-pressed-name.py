@@ -22,6 +22,7 @@ class Solution:
 
 assert Solution().isLongPressedName('alex', 'aaleex') == True
 assert Solution().isLongPressedName('saeed', 'ssaaedd') == False
+assert Solution().isLongPressedName('keating', 'keat') == False
 
 
 class Solution:
@@ -37,6 +38,7 @@ class Solution:
 
 assert Solution().isLongPressedName('alex', 'aaleex') == True
 assert Solution().isLongPressedName('saeed', 'ssaaedd') == False
+assert Solution().isLongPressedName('keating', 'keat') == False
 
 
 print('success!')
