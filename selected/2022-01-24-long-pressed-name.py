@@ -10,7 +10,7 @@ class Solution:
             if i < size-1 and name[i+1] == v:
                 continue
             else:
-                if repeatedStr == typed[0:len(repeatedStr)]:
+                if typed.startswith(repeatedStr):
                     typed = typed[len(repeatedStr):]
                     while typed.startswith(v):
                         typed = typed[1:]
