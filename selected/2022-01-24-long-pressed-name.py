@@ -12,7 +12,7 @@ class Solution:
             else:
                 if repeatedStr == typed[0:len(repeatedStr)]:
                     typed = typed[len(repeatedStr):]
-                    while typed != '' and typed[0] == v:
+                    while typed.startswith(v):
                         typed = typed[1:]
                     repeatedStr = ''
                 else:
