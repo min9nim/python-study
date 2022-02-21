@@ -62,6 +62,39 @@ class Solution:
 
 assert Solution().maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]) == 6
 assert Solution().maxSubArray([1]) == 1
+assert Solution().maxSubArray([5, 4, -1, 7, 8])
+assert Solution().maxSubArray([-4, -2]) == -2
+
+
+class Solution:
+    def maxSubArray(self, nums):
+        maxSub = nums[0]
+        curSum = 0
+        for n in nums:
+            curSum = max(0, curSum)
+            curSum += n
+            maxSub = max(maxSub, curSum)
+        return maxSub
+
+
+assert Solution().maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]) == 6
+assert Solution().maxSubArray([1]) == 1
+assert Solution().maxSubArray([5, 4, -1, 7, 8]) == 23
+assert Solution().maxSubArray([-4, -2]) == -2
+
+
+class Solution:
+    def maxSubArray(self, nums):
+        maxSub = nums[0]
+        curSum = 0
+        for n in nums:
+            curSum = max(0, curSum) + n
+            maxSub = max(maxSub, curSum)
+        return maxSub
+
+
+assert Solution().maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]) == 6
+assert Solution().maxSubArray([1]) == 1
 assert Solution().maxSubArray([5, 4, -1, 7, 8]) == 23
 assert Solution().maxSubArray([-4, -2]) == -2
 
