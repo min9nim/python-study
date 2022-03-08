@@ -4,26 +4,26 @@ from typing import List
 
 
 class Solution:
-    def createAccMat(self,  mat: List[List[int]]):
-        result = []
-        for i in range(len(mat)):
-            accSum = 0
-            result.append([])
-            for j in range(len(mat[0])):
-                accSum += mat[i][j]
-                result[i].append((result[i-1][j] if i-1 >= 0 else 0) + accSum)
-        return result
 
     def matrixBlockSum(self, mat: List[List[int]], k: int) -> List[List[int]]:
-        accMat = self.createAccMat(mat)
+        m, n = len(mat), len(mat[0])
+
+        accMat = []
+        for i in range(m):
+            accSum = 0
+            accMat.append([])
+            for j in range(n):
+                accSum += mat[i][j]
+                accMat[i].append((accMat[i-1][j] if i-1 >= 0 else 0) + accSum)
+
         answer = []
-        for i in range(len(mat)):
+        for i in range(m):
             answer.append([])
-            for j in range(len(mat[0])):
-                rx = i+k if i+k < len(mat) else len(mat) - 1
-                ry = j+k if j+k < len(mat[0]) else len(mat[0]) - 1
-                lx = i-k if i-k > 0 else 0
-                ly = j-k if j-k > 0 else 0
+            for j in range(n):
+                rx = min(i+k, m - 1)
+                ry = min(j+k, n - 1)
+                lx = max(i-k, 0)
+                ly = max(j-k, 0)
                 answer[i].append(accMat[rx][ry]
                                  - (accMat[rx][ly-1] if ly-1 >= 0 else 0)
                                  - (accMat[lx-1][ry] if lx-1 >= 0 else 0)
