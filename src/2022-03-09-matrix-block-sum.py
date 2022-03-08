@@ -20,15 +20,16 @@ class Solution:
         for i in range(len(mat)):
             answer.append([])
             for j in range(len(mat[0])):
-                rbSum = accMat[i+k if i+k < len(mat) else len(
-                    mat) - 1][j+k if j+k < len(mat[0]) else len(mat[0]) - 1]
-                rtSum = accMat[i-k-1][j +
-                                      k if j+k < len(mat[0]) else len(mat[0]) - 1] if i-k-1 >= 0 else 0
-                lbSum = accMat[i+k if i+k <
-                               len(mat) else len(mat) - 1][j-k-1] if j-k-1 >= 0 else 0
-                ltSum = accMat[i-k-1][j-k-1] if i - \
-                    k-1 >= 0 and j-k-1 >= 0 else 0
-                answer[i].append(rbSum - rtSum - lbSum + ltSum)
+                rx = i+k if i+k < len(mat) else len(mat) - 1
+                ry = j+k if j+k < len(mat[0]) else len(mat[0]) - 1
+                lx = i-k if i-k > 0 else 0
+                ly = j-k if j-k > 0 else 0
+                answer[i].append(accMat[rx][ry]
+                                 - (accMat[rx][ly-1] if ly-1 >= 0 else 0)
+                                 - (accMat[lx-1][ry] if lx-1 >= 0 else 0)
+                                 + (accMat[lx-1][ly-1]
+                                    if lx - 1 >= 0 and ly-1 >= 0 else 0)
+                                 )
         return answer
 
 
