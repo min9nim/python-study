@@ -1,9 +1,6 @@
 # https://leetcode.com/problems/maximum-subarray/
 
 
-from operator import le
-
-
 class Solution:
     def maxSubArray(self, nums):
         length = len(nums)
