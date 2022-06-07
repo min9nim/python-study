@@ -42,3 +42,17 @@ assert Solution().matrixBlockSum([[1, 2, 3], [4, 5, 6], [7, 8, 9]], 2) == [
     [45, 45, 45], [45, 45, 45], [45, 45, 45]]
 
 print('done')
+
+
+'''
+Hint1.
+How to calculate the required sum for a cell (i,j) fast ?
+
+
+Hint2.
+Create a cumulative sum matrix where sum[i][j] is the sum of all cells in the rectangle from (0,0) to (i,j).
+
+
+Hint3.
+use inclusion-exclusion idea.
+'''
