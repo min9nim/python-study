@@ -40,19 +40,29 @@ assert Solution().matrixBlockSum([[1, 2, 3], [4, 5, 6], [7, 8, 9]], 1) == [
     [12, 21, 16], [27, 45, 33], [24, 39, 28]]
 assert Solution().matrixBlockSum([[1, 2, 3], [4, 5, 6], [7, 8, 9]], 2) == [
     [45, 45, 45], [45, 45, 45], [45, 45, 45]]
+assert Solution().matrixBlockSum([[1, 1, 1, 1], [1, 1, 1, 1]], 2) == [
+    [6, 8, 8, 6], [6, 8, 8, 6]
+]
+
 
 print('done')
 
 
 '''
+ex)
+mat: [[1, 1, 1, 1], [1, 1, 1, 1]]
+k: 2
+answer) [6, 8, 8, 6], [6, 8, 8, 6]
+
+
+
+질문1) 제안하신 Brute force 방법의 시간복잡도는? (m,n,k 로 표현)
+
+
 Hint1.
-How to calculate the required sum for a cell (i,j) fast ?
-
-
-Hint2.
 Create a cumulative sum matrix where sum[i][j] is the sum of all cells in the rectangle from (0,0) to (i,j).
 
 
-Hint3.
+Hint2.
 use inclusion-exclusion idea.
 '''
