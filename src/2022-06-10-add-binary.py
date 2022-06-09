@@ -2,7 +2,7 @@ class Solution:
     def addBinary(self, a: str, b: str) -> str:
         aLen, bLen = len(a), len(b)
         if aLen > bLen:
-            b = '0' * (aLen-bLen) + b
+            b = '0' * (aLen - bLen) + b
         else:
             a = '0' * (bLen - aLen) + a
         result = ''
