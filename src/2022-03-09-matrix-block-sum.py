@@ -59,10 +59,6 @@ answer) [6, 8, 8, 6], [6, 8, 8, 6]
 질문1) 제안하신 Brute force 방법의 시간복잡도는? (m,n,k 로 표현)
 
 
-Hint1.
-Create a cumulative sum matrix where sum[i][j] is the sum of all cells in the rectangle from (0,0) to (i,j).
-
-
-Hint2.
-use inclusion-exclusion idea.
+Hint)
+Create a cumulative sum matrix where sum[i][j] is the sum of all cells in the rectangle from (0,0) to (i,j). And use inclusion-exclusion idea.
 '''
